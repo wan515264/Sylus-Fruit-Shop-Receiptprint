@@ -21,6 +21,14 @@ const receiptImage = document.querySelector("#receipt-image");
 const downloadReceipt = document.querySelector("#download-receipt");
 const logoImage = document.querySelector(".brand-logo");
 
+function getTodayDateValue() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
 function parseMoney(value) {
   return Number(String(value).replace(/[^\d.-]/g, "")) || 0;
 }
@@ -270,6 +278,7 @@ Object.values(orderFields).forEach((field) => {
 
 addItemButton.onclick = addBlankItem;
 printButton.addEventListener("click", drawReceiptImage);
+orderFields.date.value = getTodayDateValue();
 syncReceipt();
 
 if (logoImage.complete) {
