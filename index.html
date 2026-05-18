@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>小秦水果超市Sylus Fruit Shop</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="receipt-card" aria-label="小秦水果超市收据">
+        <header class="receipt-header">
+          <img class="brand-logo" src="logo.jpg" alt="小秦水果超市 logo">
+        </header>
+
+        <div class="receipt-customer-line">
+          <span>Customer</span>
+          <strong id="receipt-customer-top">Kitten小狸花</strong>
+        </div>
+
+        <div class="receipt-meta">
+          <span id="receipt-number">Receipt No. 0001097295</span>
+          <span id="receipt-date">2026-05-17</span>
+        </div>
+
+        <div id="receipt-lines" class="receipt-lines" aria-label="商品列表"></div>
+
+        <div class="receipt-total">
+          <span>Total</span>
+          <strong id="receipt-total">¥ 39.90</strong>
+        </div>
+
+        <footer class="receipt-footer">
+          <span>If you have any question,please feel free to contact:</span>
+          <span>Sylus,Onychinus,N109 Zone</span>
+          <span>Do not use for commercial purposes.</span>
+        </footer>
+      </section>
+
+      <aside class="control-panel" aria-label="订单信息">
+        <h2>Today's Order</h2>
+        <label>
+          Customer
+          <input id="customer" value="Kitten小狸花">
+        </label>
+        <label>
+          Date
+          <input id="date" type="date" value="2026-05-17">
+        </label>
+        <label>
+          No.
+          <input id="order-number" value="0001097295">
+        </label>
+        <section class="order-items" aria-label="Order items">
+          <div class="order-items-heading">
+            <span>Items</span>
+            <span>Amount</span>
+            <span>Price</span>
+          </div>
+          <div id="order-items-list">
+            <div class="order-item-row">
+              <input class="item-name" aria-label="Item name" value="">
+              <input class="item-amount" aria-label="Item amount" type="number" min="1" value="">
+              <input class="item-price" aria-label="Item price" value="">
+              <button class="remove-item" type="button" aria-label="Remove item">×</button>
+            </div>
+            <div class="order-item-row">
+              <input class="item-name" aria-label="Item name" value="">
+              <input class="item-amount" aria-label="Item amount" type="number" min="1" value="">
+              <input class="item-price" aria-label="Item price" value="">
+              <button class="remove-item" type="button" aria-label="Remove item">×</button>
+            </div>
+            <div class="order-item-row">
+              <input class="item-name" aria-label="Item name" value="">
+              <input class="item-amount" aria-label="Item amount" type="number" min="1" value="">
+              <input class="item-price" aria-label="Item price" value="">
+              <button class="remove-item" type="button" aria-label="Remove item">×</button>
+            </div>
+          </div>
+          <button id="add-item" class="secondary-button" type="button">Add Item</button>
+        </section>
+        <label>
+          Sum
+          <input id="sum" value="¥ 0.00" readonly>
+        </label>
+        <button id="print-receipt" type="button">Print Receipt</button>
+        <section class="generated-receipt" aria-live="polite">
+          <h3>Picture Receipt</h3>
+          <img id="receipt-image" alt="Generated picture receipt">
+          <a id="download-receipt" href="#" download="Sylus Fruit Shop - Receipt.jpg">Download JPG</a>
+        </section>
+      </aside>
+    </main>
+    <script src="script.js?v=multi-items-4"></script>
+  </body>
+</html>
